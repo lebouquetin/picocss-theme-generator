@@ -54,7 +54,7 @@ cd pico/
 Add your theme in the `themeColors` list:
 
 ```bash
-sed -i '/const themeColors = \[/a\  "mytheme",' pico/scripts/build-themes.js
+sed -i '/const themeColors = \[/a\  "mytheme",' scripts/build-themes.js
 ```
 
 #### Patch the `scss/colors/utilities/_settings.scss` file
@@ -62,7 +62,7 @@ sed -i '/const themeColors = \[/a\  "mytheme",' pico/scripts/build-themes.js
 Add your theme name to the `color-families` variable:
 
 ```bash
-sed -i '/"color-families": (/a\        mytheme,' pico/scss/colors/utilities/_settings.scss
+sed -i '/"color-families": (/a\        mytheme,' scss/colors/utilities/_settings.scss
 ```
 
 #### Patch the `scss/colors/_index.scss` file
@@ -125,7 +125,7 @@ $colors: (
 )
 ```
 
-#### Patch the `pico/scss/themes/default/_theme-colors.scss` file
+#### Patch the `scss/themes/default/_theme-colors.scss` file
 
 Add your mapping for dark/light mode in the `_theme-colors.scss` file:
 
