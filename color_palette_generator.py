@@ -112,12 +112,14 @@ def generate_color_palette(primary_hex, palette_name="color"):
         hex_color = rgb_to_hex(r, g, b)
         
         palette[f"{palette_name}-{variant}"] = hex_color
-    
+
+    palette[f"{palette_name}"] = f"${palette_name}-550"  # add default item as a link to 550-color
+
     return palette
 
-def print_scss_variables(palette):
+def print_scss_variables(palette, palette_name):
     """Print the palette as SCSS variables"""
-    print("// Generated color palette:")
+    print(f"// {palette_name} palette:")
     for color_name, hex_value in palette.items():
         print(f"${color_name}: {hex_value};")
 
@@ -430,7 +432,7 @@ if __name__ == "__main__":
     palette = generate_color_palette(primary_color, palette_name)
     
     print("\nSCSS Variables:")
-    print_scss_variables(palette)
+    print_scss_variables(palette, palette_name)
     
     print("\n" + "="*50 + "\n")
     
